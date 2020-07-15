@@ -1,6 +1,6 @@
-# NgMocksMatSelectIssue
+# NgMocksCustomFormControlIssue
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.10.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.10 and upgraded to 10.0.3.
 
 ## Instructions
 
