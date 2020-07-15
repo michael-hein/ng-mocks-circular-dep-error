@@ -1,8 +1,11 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import {
+  AbstractControl,
   ControlValueAccessor,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR,
+  ValidationErrors,
+  Validator,
 } from '@angular/forms';
 
 @Component({
@@ -22,8 +25,15 @@ import {
     },
   ],
 })
-export class MyFormControlComponent implements ControlValueAccessor, OnInit {
+export class MyFormControlComponent
+  implements ControlValueAccessor, OnInit, Validator {
   constructor() {}
+  validate(control: AbstractControl): ValidationErrors {
+    throw new Error('Method not implemented.');
+  }
+  registerOnValidatorChange?(fn: () => void): void {
+    throw new Error('Method not implemented.');
+  }
   writeValue(obj: any): void {
     throw new Error('Method not implemented.');
   }

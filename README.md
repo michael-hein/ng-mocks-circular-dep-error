@@ -4,23 +4,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instructions
 
-`AppComponent` was changed to reproduce an issue when combining `ng-mocks` with `mat-select` component in unit tests.
+`AppComponent` was changed to reproduce an issue when a custom form-control component implements ControlValueAccessor and Validator and providing NG_VALUE_ACCESSOR, NG_VALIDATORS in unit tests.
 
 To reproduce the issue, run `ng test`.
 
 You should receive the following error:
 ```bash
-Chrome Headless 83.0.4103.116 (Mac OS 10.14.6) AppComponent should create the app FAILED
-        Error: No value accessor for form control with name: 'toppings'
-            at _throwError (http://localhost:9876/_karma_webpack_/node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js:3576:1)
-            at setUpControl (http://localhost:9876/_karma_webpack_/node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js:3400:1)
-            at FormGroupDirective.addControl (http://localhost:9876/_karma_webpack_/node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js:7679:1)
-            at FormControlName._setUpControl (http://localhost:9876/_karma_webpack_/node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js:8451:24)
-            at FormControlName.ngOnChanges (http://localhost:9876/_karma_webpack_/node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js:8368:1)
-            at FormControlName.wrapOnChangesHook_inPreviousChangesStorage (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:26966:1)
-            at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:4730:1)
-            at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:4690:1)
-            at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:4630:1)
+Chrome Headless 83.0.4103.116 (Windows 10) AppComponent should create the app FAILED
+        Error: Circular dep for MockOfMyFormControlComponent
+            at getNodeInjectable (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:3903:1)
+            at searchTokensOnInjector (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:3849:1)
+            at getOrCreateInjectable (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:3771:1)
+            at ɵɵdirectiveInject (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:13733:1)
+            at ɵɵinject (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:804:1)
+            at factory (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11321:1)
+            at multiResolve (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:19005:1)
+            at NodeInjectorFactory.multiProvidersFactoryResolver [as factory] (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:18970:1)
+            at getNodeInjectable (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:3913:1)
 ```
 
 ## Development server
