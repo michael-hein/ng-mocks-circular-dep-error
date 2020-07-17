@@ -10,6 +10,7 @@ import { FormBuilder } from '@angular/forms';
 export class AppComponent {
   pizzaForm = this.formBuilder.group({
     name: [''],
+    details: [''],
   });
 
   constructor(private formBuilder: FormBuilder) {}
